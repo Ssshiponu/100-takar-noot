@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>১০০ টাকার নোট</title>
+    <meta name="description" content="১০০ টাকার নোট">
+    <meta name="author" content="Mohin Uddin">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="১০০ টাকার নোট">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary">
+    <meta property="twitter:title" content="১০০ টাকার নোট">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #666;
+            --background: #ffffff;
+            --accent: #3498db;
+            --border: #e1e8ed;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--background);
+            font-size: 18px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+        
+        .meta {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .story-content {
+            margin-bottom: 3rem;
+        }
+        
+        .story-content h1, .story-content h2, .story-content h3 {
+            color: var(--primary-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .story-content h1 {
+            font-size: 2rem;
+            border-bottom: 3px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+        
+        .story-content h2 {
+            font-size: 1.5rem;
+        }
+        
+        .story-content h3 {
+            font-size: 1.2rem;
+        }
+        
+        .story-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .story-content p:first-child::first-letter {
+            font-size: 4rem;
+            font-weight: 700;
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+            color: var(--accent);
+        }
+        
+        .story-content blockquote {
+            border-left: 4px solid var(--accent);
+            margin: 2rem 0;
+            padding: 1rem 2rem;
+            background-color: #f8f9fa;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .story-content blockquote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            left: 0.5rem;
+            top: -0.5rem;
+            font-family: serif;
+        }
+        
+        .story-content em {
+            color: var(--text-light);
+            font-style: italic;
+        }
+        
+        .story-content strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .divider {
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+        }
+        
+        
+        .divider::before {
+            content: '❋ ❋ ❋';
+            font-size: 1.5rem;
+            color: var(--accent);
+            background: var(--background);
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--border);
+            z-index: 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .github-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(52, 152, 219, 0.2);
+            z-index: 1000;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--accent);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .story-content p:first-child::first-letter {
+                font-size: 3rem;
+            }
+            
+            .meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #3498db;
+                --text-color: #e1e8ed;
+                --text-light: #8899a6;
+                --background: #1a1a1a;
+                --accent: #74b9ff;
+                --border: #2f3336;
+                --shadow: rgba(255, 255, 255, 0.1);
+            }
+            
+            .story-content blockquote {
+                background-color: #2a2a2a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="reading-progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <div class="container">
+        <header class="header">
+            <div class="meta">
+                <h2><a style="color: var(--accent)" href="https://mohinuddinshipon.pythonanywhere.com">Mohin Uddin</a></h2>
+                <small>april 2025</small>
+            </div>
+        </header>
+        
+        <main class="story-content">
+             <h1>১০০ টাকার নোট</h1>
+
+  <p>আমি আমাদের গ্রামে ঘুরতে গিয়েছিলাম। থাকার জায়গা হিসেবে ছিলো আমার খালার বাড়ি। সেখানেই প্রথম দেখা হয়েছিলো মেয়েটার সঙ্গে। মেয়েটির বয়স হবে আনুমানিক ১৬। ও আমাদের পাশের বাড়িতে, মানে ওর মামার বাড়িতে বেড়াতে এসেছিলো। ওদেরও বাড়ি গ্রামেই, তবে অন্য পাড়ায়।</p>
+
+  <p>প্রথম প্রথম মাঝে মাঝে খালাদের ঘর বা উঠোনে আমাদের দেখা হতো। কিছুদিন পর বুঝতে পারলাম, মেয়েটি আমার সঙ্গে কথা বলতে এবং সময় কাটাতে আগ্রহী। ওর চোখেমুখে ছিল একরকম কৌতূহল আর আলাদা রকমের আন্তরিকতা। আমিও মাঝে মাঝে ওর সঙ্গে গল্প করতাম, হাসতাম।</p>
+
+  <p>আরও কিছুদিন পর, ওর আচরণে বুঝতে পারি — ও আমাকে পছন্দ করতে শুরু করেছে। সময় কাটাতে চায়, কাছে আসতে চায়। যেদিন ওকে চলে যেতে হবে, সেদিন অনেকটা সময় আমার পাশে কাটালো। খালাদের ঘর ছাড়ার আগমুহূর্তে, হঠাৎ খুব লাজুকভাবে আমার হাতে ১০০ টাকার একটি নোট ধরিয়ে দিয়ে মুখ লুকিয়ে চলে যেতে লাগল।</p>
+
+  <p>আমি একটু রেগে গেলাম।</p>
+  <p class="dialogue">— “এই শোনো।”</p>
+  <p>সে থেমে দাঁড়ায়, তবে মুখ নিচু করে।</p>
+  <p class="dialogue">— “এদিকে আসো।”</p>
+  <p>চুপচাপ আমার দিকে আসে।</p>
+  <p class="dialogue">— “বললাম না, এদিকে আসো?”</p>
+  <p>সে একদম সামনে এসে দাঁড়ায়।</p>
+
+  <p>আমি তার হাতে টাকা ফিরিয়ে দিয়ে বলি,</p>
+  <p class="dialogue">— “এইটা নাও।”</p>
+
+  <p>সে কষ্ট পেলো, মুখ গম্ভীর হয়ে গেলো। কিন্তু শেষ পর্যন্ত টাকাটা নিয়ে নিলো। তখন আমি ওকে খুব আলতো করে একটা চড় মেরে ফেলি। সে চলে গেল।</p>
+
+  <p>কিছুক্ষণ পরেই মনে হলো, <strong>“আহ্, আমি কি করলাম! মেয়েটার সঙ্গে এভাবে আচরণ করা উচিত হয়নি।”</strong></p>
+
+  <p>ঠিক তখনই দেখি, মেয়েটি ব্যাগ হাতে উঠোন দিয়ে বের হয়ে যাচ্ছে। আমি দৌড়ে তার পেছনে গেলাম।</p>
+  <p class="dialogue">— “এই শোনো।”</p>
+  <p>সে আমার দিকে তাকালো, কিন্তু কিছু বললো না। চোখেমুখে একটা গভীর কষ্ট।</p>
+
+  <p>আমি বললাম,</p>
+  <p class="dialogue">— “মনে হয় আমি তোমার সঙ্গে খুব খারাপ ব্যবহার করে ফেলেছি। আমাকে ক্ষমা করে দিও।”</p>
+
+  <p>ঠিক তখন ওর ফোনে কল আসে। ওর মামা এসে রাস্তায় দাঁড়িয়ে অপেক্ষা করছিলেন। তাকে তাড়াতাড়ি যেতে বললেন।</p>
+
+  <p>ও কিছু না বলে চলে গেলো। আমি দাঁড়িয়ে থাকলাম। যতক্ষণ ওকে দেখা যাচ্ছিলো, তাকিয়ে ছিলাম ওর দিকে।</p>
+
+  <p>তারপর মাথা নিচু করে মাটির দিকে তাকিয়ে দেখি — সেই ১০০ টাকার নোটটা মাটিতে পড়ে আছে।</p>
+
+  <p>আমি নোটটা তুলে ভাঁজ খুলে দেখি, ভিতরে লেখা —</p>
+  
+  <p class="note">“আমি তোমাকে অনেক ভালোবাসি।”</p>
+        </main>
+        
+        <footer class="footer">
+            <p>
+                <a href="https://github.com/ssshiponu/100-takar-noot" class="github-link">
+                    <span>⭐</span>
+                    <span>View on GitHub</span>
+                </a>
+            </p>
+            <p>© 2025 Mohin Uddin. All rights reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Reading progress indicator
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
